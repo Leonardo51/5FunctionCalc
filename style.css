@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 body{
-    background:  #17202a ;
+    background: #212F3C;
 }
 
 label {
@@ -28,6 +28,7 @@ fieldset{
     width: fit-content;
     margin-bottom: 16px;
     padding: 12px;
+    background: whitesmoke;
 }
 
 
@@ -65,13 +66,20 @@ section header{
 
 .content{
     box-shadow: 0 1px 3px 0 rgba(0 0 0 0.1), 0 1px 2px -1px rgba(0 0 0 0.1);
-    background: #F2F3F4;
+    background: whitesmoke;
     padding: 20px;
     border-radius: 12px;
-    width: 600px;
+    width: 700px;
 }
 .center{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+button{
+    max-height: 70px;
+    min-height: 40px;
+    border-radius: 10px;
+    border:2px solid black;
+    background: white;
 }

@@ -6,6 +6,105 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="container">
+    <div class="content">
+        <h1>5 Function Calculator</h1>
+        <fieldset>
+        <div class="row">
+            <div>
+                <label for="first">First Value</label>
+                <input type="text" id="first" name="first_value">
+            </div>
+            <div>
+                <label for="second">Second Value</label>
+                <input type="text" id="second" name="second_value">
+            </div>
+        </div>
+        <div class="row">
+            <h3>Choose Operation</h3>
+            <button id="addition">Addition(+)</button>
+            <button id="subtraction">Subtraction(-)</button>
+            <button id="multiplication">Multiplication(*)</button>
+            <button id="division">Division(/)</button>
+            <button id="remainder">Power(^)</button>
+        </div>
+        </fieldset>
+        <ul></ul>
+        <button id="clear">Clear</button>
+    </div>
+</div>
+<script>
+    const value1 = document.getElementById('first');
+    const value2= document.getElementById('second');
+    const add = document.getElementById('addition');
+    const subtract = document.getElementById('subtraction');
+    const multiply = document.getElementById('multiplication');
+    const divide = document.getElementById('division');
+    const leftover = document.getElementById('remainder');
+    const answer = document.querySelector('ul');
+    const clearButton = document.getElementById('clear');
 
+
+    add.addEventListener('click',function (e){
+       let firstValue = +value1.value;
+       let secondValue = +value2.value;
+       let allAnswers = document.createElement('li');
+       let sum = firstValue + secondValue;
+       allAnswers.innerHTML = `${firstValue} + ${secondValue} = ${sum}`;
+       answer.appendChild(allAnswers);
+       value1.value = "";
+       value2.value = "";
+    })
+
+    subtract.addEventListener('click',function(e) {
+        let firstValue = +value1.value;
+        let secondValue = +value2.value;
+        let allAnswers = document.createElement('li');
+        let difference = firstValue - secondValue;
+        allAnswers.innerHTML = `${firstValue} - ${secondValue} = ${difference}`;
+        answer.appendChild(allAnswers);
+        value1.value = "";
+        value2.value = "";
+    })
+
+    multiply.addEventListener('click',function(e) {
+        let firstValue = +value1.value;
+        let secondValue = +value2.value;
+        let allAnswers = document.createElement('li');
+        let product = firstValue * secondValue;
+        allAnswers.innerHTML = `${firstValue} * ${secondValue} = ${product}`;
+        answer.appendChild(allAnswers);
+        value1.value = "";
+        value2.value = "";
+    })
+
+    divide.addEventListener('click',function(e) {
+        let firstValue = +value1.value;
+        let secondValue = +value2.value;
+        let allAnswers = document.createElement('li');
+        let quotient = firstValue / secondValue;
+        allAnswers.innerHTML = `${firstValue} / ${secondValue} = ${quotient}`;
+        answer.appendChild(allAnswers);
+        value1.value = "";
+        value2.value = "";
+    })
+
+    leftover.addEventListener('click',function(e) {
+        let firstValue = +value1.value;
+        let secondValue = +value2.value;
+        let allAnswers = document.createElement('li');
+        let total = firstValue % secondValue;
+        allAnswers.innerHTML = `The remainder of ${firstValue} divided by ${secondValue} is ${total}`;
+        answer.appendChild(allAnswers);
+        value1.value = "";
+        value2.value = "";
+    })
+
+    clearButton.addEventListener('click',function(e){
+        answer.textContent = "";
+        value1.value = "";
+        value2.value = "";
+    })
+</script>
 </body>
 </html>
